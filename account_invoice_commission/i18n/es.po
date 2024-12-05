@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024
-# Rocio Vega, 2024
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 13:39+0000\n"
-"PO-Revision-Date: 2024-05-29 14:21+0000\n"
-"Last-Translator: Rocio Vega, 2024\n"
+"POT-Creation-Date: 2024-11-20 15:10+0000\n"
+"PO-Revision-Date: 2024-11-14 20:11+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +27,6 @@ msgstr "Regla de Comisión de Cuenta"
 #. module: account_invoice_commission
 #: model:ir.model.fields,help:account_invoice_commission.field_account_bank_statement_line__commission_invoice_ids
 #: model:ir.model.fields,help:account_invoice_commission.field_account_move__commission_invoice_ids
-#: model:ir.model.fields,help:account_invoice_commission.field_account_payment__commission_invoice_ids
 msgid "Commision invoices where this invoice is commissioned"
 msgstr "Facturas de comisiones donde se liquida esta factura."
 
@@ -41,14 +39,12 @@ msgstr "Comisión"
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_bank_statement_line__commission_amount
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_move__commission_amount
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_move_line__commission_amount
-#: model:ir.model.fields,field_description:account_invoice_commission.field_account_payment__commission_amount
 msgid "Commission Amount"
 msgstr "Importe de la Comisión"
 
 #. module: account_invoice_commission
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_bank_statement_line__commission_invoice_ids
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_move__commission_invoice_ids
-#: model:ir.model.fields,field_description:account_invoice_commission.field_account_payment__commission_invoice_ids
 msgid "Commission Invoices"
 msgstr "Facturas de comisiones"
 
@@ -62,7 +58,6 @@ msgstr "Reglas de Comisión"
 #. module: account_invoice_commission
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_bank_statement_line__commissioned_invoice_ids
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_move__commissioned_invoice_ids
-#: model:ir.model.fields,field_description:account_invoice_commission.field_account_payment__commissioned_invoice_ids
 msgid "Commissioned invoices"
 msgstr "Facturas comisionadas"
 
@@ -130,7 +125,6 @@ msgstr "Apunte contable"
 #. module: account_invoice_commission
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_bank_statement_line__date_last_payment
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_move__date_last_payment
-#: model:ir.model.fields,field_description:account_invoice_commission.field_account_payment__date_last_payment
 msgid "Last Payment Date"
 msgstr "Última Fecha de Pago"
 
@@ -167,7 +161,6 @@ msgstr "Empresa"
 #. module: account_invoice_commission
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_bank_statement_line__partner_user_id
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_move__partner_user_id
-#: model:ir.model.fields,field_description:account_invoice_commission.field_account_payment__partner_user_id
 msgid "Partner User"
 msgstr "Usuario de la empresa"
 
@@ -223,7 +216,6 @@ msgstr "Fecha de inicio para esta regla"
 #. module: account_invoice_commission
 #: model:ir.model.fields,help:account_invoice_commission.field_account_bank_statement_line__commissioned_invoice_ids
 #: model:ir.model.fields,help:account_invoice_commission.field_account_move__commissioned_invoice_ids
-#: model:ir.model.fields,help:account_invoice_commission.field_account_payment__commissioned_invoice_ids
 msgid "The invoices that this commission invoice is commissioning"
 msgstr "Facturas comisionadas en esta factura de comisión"
 
@@ -231,4 +223,4 @@ msgstr "Facturas comisionadas en esta factura de comisión"
 #: model_terms:ir.ui.view,arch_db:account_invoice_commission.view_invoice_tree
 #: model_terms:ir.ui.view,arch_db:account_invoice_commission.view_move_form
 msgid "Total"
-msgstr "Total"
+msgstr ""

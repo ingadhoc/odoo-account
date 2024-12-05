@@ -4,15 +4,14 @@
 # 
 # Translators:
 # Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024
-# Gonzalo, 2024
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0+e\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 13:40+0000\n"
-"PO-Revision-Date: 2024-01-26 12:42+0000\n"
-"Last-Translator: Gonzalo, 2024\n"
+"POT-Creation-Date: 2024-11-14 20:12+0000\n"
+"PO-Revision-Date: 2024-11-14 20:12+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2024\n"
 "Language-Team: Spanish (https://app.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,9 +20,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #. module: account_background_post
+#: model:ir.model.fields,field_description:account_background_post.field_account_move__algolia_search
+#: model:ir.model.fields,field_description:account_background_post.field_validate_account_move__algolia_search
+msgid "Algolia Search"
+msgstr "Busqueda Avanzada"
+
+#. module: account_background_post
 #: model:ir.model.fields,field_description:account_background_post.field_account_bank_statement_line__background_post
 #: model:ir.model.fields,field_description:account_background_post.field_account_move__background_post
-#: model:ir.model.fields,field_description:account_background_post.field_account_payment__background_post
 msgid "Background Post"
 msgstr "Validación en Background"
 
@@ -50,7 +54,6 @@ msgstr "Forzar Background"
 #. module: account_background_post
 #: model:ir.model.fields,help:account_background_post.field_account_bank_statement_line__background_post
 #: model:ir.model.fields,help:account_background_post.field_account_move__background_post
-#: model:ir.model.fields,help:account_background_post.field_account_payment__background_post
 msgid "If True then this invoice will be validated in the background by cron."
 msgstr "Si es Verdadero esta factura sera validada en background por el cron."
 
@@ -62,14 +65,13 @@ msgstr "Asiento contable"
 #. module: account_background_post
 #. odoo-python
 #: code:addons/account_background_post/wizards/validate_account_move.py:0
-#, python-format
 msgid "Missing 'active_model' in context."
 msgstr "Falta 'active_model' en el contexto"
 
 #. module: account_background_post
 #: model:ir.model.fields,field_description:account_background_post.field_validate_account_move__move_ids
 msgid "Move"
-msgstr "Asiento"
+msgstr "Movimiento "
 
 #. module: account_background_post
 #: model_terms:ir.ui.view,arch_db:account_background_post.validate_account_move_view
@@ -92,7 +94,6 @@ msgstr ""
 #. module: account_background_post
 #. odoo-python
 #: code:addons/account_background_post/wizards/validate_account_move.py:0
-#, python-format
 msgid "There are no journal items in the draft state to post."
 msgstr "No hay asientos en estado borrador por validar"
 
@@ -109,7 +110,6 @@ msgstr "Validar asiento contable"
 #. module: account_background_post
 #. odoo-python
 #: code:addons/account_background_post/models/account_move.py:0
-#, python-format
 msgid "We tried to validate this invoice on the background but got this error"
 msgstr ""
 "Intentamos validar esta factura en background pero recibimos este error"
@@ -130,7 +130,6 @@ msgstr ""
 #. module: account_background_post
 #. odoo-python
 #: code:addons/account_background_post/wizards/validate_account_move.py:0
-#, python-format
 msgid ""
 "You can only validate on batches of size < %s invoices. If you need to "
 "validate more invoices please use the validate on background option"
