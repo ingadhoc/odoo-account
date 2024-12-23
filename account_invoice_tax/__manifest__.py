@@ -13,7 +13,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'account_invoice_tax/static/src/xml/**/*',
+        #    'account_invoice_tax/static/src/xml/**/*',
         ],
     },
     'license': 'AGPL-3',
