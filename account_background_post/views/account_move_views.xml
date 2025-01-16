@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-
         <record id="view_out_invoice_tree" model="ir.ui.view">
             <field name="name">account.move.list.inherit</field>
             <field name="model">account.move</field>
@@ -24,5 +22,4 @@
             </field>
         </record>
 
-    </data>
 </odoo>
