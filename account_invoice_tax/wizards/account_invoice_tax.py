@@ -72,7 +72,7 @@ class AccountInvoiceTax(models.TransientModel):
             }
 
 
-class AccountInvoiceTax(models.TransientModel):
+class AccountInvoiceTaxLine(models.TransientModel):
 
     _name = 'account.invoice.tax_line'
     _description = 'Account Invoice Tax line'
