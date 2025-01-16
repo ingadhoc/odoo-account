@@ -53,11 +53,6 @@ msgid "Commissioned invoices"
 msgstr ""
 
 #. module: account_invoice_commission
-#: model:ir.ui.view,arch_db:account_invoice_commission.invoice_form
-msgid "Commissions"
-msgstr ""
-
-#. module: account_invoice_commission
 #: model:ir.model.fields,field_description:account_invoice_commission.field_account_commission_rule_create_uid
 msgid "Created by"
 msgstr ""
@@ -151,11 +146,6 @@ msgstr ""
 #. module: account_invoice_commission
 #: model:ir.ui.view,arch_db:account_invoice_commission.view_account_invoice_filter
 msgid "Not Commissioned"
-msgstr ""
-
-#. module: account_invoice_commission
-#: model:ir.ui.view,arch_db:account_invoice_commission.view_account_invoice_filter
-msgid "Paid"
 msgstr ""
 
 #. module: account_invoice_commission
