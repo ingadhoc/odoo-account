@@ -19,6 +19,7 @@ class AccountMoveLine(models.Model):
         self.number = False
         if self and not isinstance(self[0].id, int):
             return
-        mapping = eval(self[0].move_id.number_lines)
+        #TODO buscar alternativa al eval() ya que puede traer errores de seguridad
+        mapping = eval(self[0].move_id.number_lines) # pylint: disable=W0123
         for line in self:
             line.number = mapping.get(line.id)
