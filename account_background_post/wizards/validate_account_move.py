@@ -11,13 +11,13 @@ class ValidateAccountMove(models.TransientModel):
 
     move_ids = fields.Many2many('account.move')
     count_inv = fields.Integer(help="Technical field to know the number of invoices selected from the wizard")
-    batch_size = fields.Integer(compute='compute_batch_size')
-    force_background = fields.Integer(compute='compute_force_background')
+    batch_size = fields.Integer(compute='_compute_batch_size')
+    force_background = fields.Integer(compute='_compute_force_background')
 
-    def compute_batch_size(self):
+    def _compute_batch_size(self):
         self.batch_size = self.env['ir.config_parameter'].sudo().get_param('account_background_post.batch_size', 20)
 
-    def compute_force_background(self):
+    def _compute_force_background(self):
         for rec in self:
             rec.force_background = rec.count_inv > rec.batch_size
 
