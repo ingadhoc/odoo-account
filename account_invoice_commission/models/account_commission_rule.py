@@ -11,7 +11,6 @@ class AccountCommissionRule(models.Model):
     _description = 'Account Commission Rule'
 
     sequence = fields.Integer(
-        'Sequence',
         required=True,
         default=10,
         help="Gives the order in which the rules items will be checked. "
