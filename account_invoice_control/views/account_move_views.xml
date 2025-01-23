@@ -27,10 +27,13 @@
                 <attribute name="attrs">{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('has_sales','=',True), ('restrict_edit_invoice','=',True)]}</attribute>
             </xpath>
             <field name="invoice_date" position="attributes">
-                <attribute name="attrs">{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('has_sales','=',True), ('restrict_edit_invoice','=',True)]}</attribute>
+                <attribute name="attrs">{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('has_sales','=',True), ('restrict_edit_invoice','=',True)],
+                    'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}</attribute>
             </field>
             <field name="partner_id" position="attributes">
-                <attribute name="attrs">{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('has_sales','=',True), ('restrict_edit_invoice','=',True)]}</attribute>
+                <attribute name="attrs">{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('has_sales','=',True), ('restrict_edit_invoice','=',True)], 
+                    'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}
+                </attribute>
             </field>
             <field name="invoice_user_id" position="attributes">
                 <attribute name="attrs">{'readonly': ['|', ('state', '!=', 'draft'), '&amp;', ('has_sales','=',True), ('restrict_edit_invoice','=',True)]}</attribute>
