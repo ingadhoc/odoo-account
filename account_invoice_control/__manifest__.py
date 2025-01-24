@@ -20,7 +20,7 @@
 {
     'name': 'Account Invoice Control',
     'author': 'ADHOC SA',
-    'version': "16.0.0.2.0",
+    'version': "16.0.0.3.0",
     'license': 'AGPL-3',
     'category': 'Accounting & Finance',
     'depends': [
