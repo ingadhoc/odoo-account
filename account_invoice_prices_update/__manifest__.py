@@ -18,19 +18,17 @@
 #
 ##############################################################################
 {
-    'name': 'Account Invoice Prices Update',
-    'version': "18.0.1.0.0",
-    'author': 'ADHOC SA',
-    'license': 'AGPL-3',
-    'category': 'Accounting & Finance',
-    'website': 'www.adhoc.com.ar',
-    'depends': [
-        'account'
+    "name": "Account Invoice Prices Update",
+    "version": "18.0.1.0.0",
+    "author": "ADHOC SA",
+    "license": "AGPL-3",
+    "category": "Accounting & Finance",
+    "website": "www.adhoc.com.ar",
+    "depends": ["account"],
+    "data": [
+        "wizards/update_prices_wizard_views.xml",
+        "views/account_move_views.xml",
+        "security/ir.model.access.csv",
     ],
-    'data': [
-        'wizards/update_prices_wizard_views.xml',
-        'views/account_move_views.xml',
-        'security/ir.model.access.csv',
-    ],
-    'installable': True,
+    "installable": True,
 }

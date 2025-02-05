@@ -18,26 +18,23 @@
 #
 ##############################################################################
 {
-    'name': 'Account Invoice Line Number',
-    'version': "15.0.1.1.0",
-    'category': 'Accounting & Finance',
-    'sequence': 14,
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Account Invoice Line Number",
+    "version": "15.0.1.1.0",
+    "category": "Accounting & Finance",
+    "sequence": 14,
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "account",
     ],
-    'depends': [
-        'account',
+    "data": [
+        "views/account_move_view.xml",
     ],
-    'data': [
-        'views/account_move_view.xml',
-    ],
-    'demo': [
-    ],
-    'test': [
-    ],
-    'installable': False,
-    'auto_install': False,
-    'application': False,
+    "demo": [],
+    "test": [],
+    "installable": False,
+    "auto_install": False,
+    "application": False,
 }

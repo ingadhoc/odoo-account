@@ -18,27 +18,25 @@
 #
 ##############################################################################
 {
-    'name': 'Account Invoice Partial',
-    'version': "18.0.1.0.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Account Invoice Partial",
+    "version": "18.0.1.0.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "account",
     ],
-    'depends': [
-        'account',
+    "data": [
+        "wizards/account_invoice_partial_wizard_views.xml",
+        "views/account_move_views.xml",
+        "security/ir.model.access.csv",
     ],
-    'data': [
-        'wizards/account_invoice_partial_wizard_views.xml',
-        'views/account_move_views.xml',
-        'security/ir.model.access.csv',
-    ],
-    'demo': [
-    ],
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "demo": [],
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }

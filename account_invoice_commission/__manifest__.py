@@ -18,29 +18,26 @@
 #
 ##############################################################################
 {
-    'name': 'Commission Invoices',
-    'version': "18.0.1.1.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Commission Invoices",
+    "version": "18.0.1.1.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "account",
     ],
-    'depends': [
-        'account',
+    "data": [
+        "views/account_move_view.xml",
+        "views/account_commission_rule_view.xml",
+        "security/ir.model.access.csv",
     ],
-    'data': [
-        'views/account_move_view.xml',
-        'views/account_commission_rule_view.xml',
-        'security/ir.model.access.csv',
-    ],
-    'demo': [
-    ],
-    'test': [
-    ],
-    'installable': True,
-    'auto_install': False,
-    'application': False,
+    "demo": [],
+    "test": [],
+    "installable": True,
+    "auto_install": False,
+    "application": False,
 }
