@@ -14,8 +14,8 @@
 Account Invoice Partial
 =======================
 
-Module that adds a button on the Customer Invoice, 
-which allows you to select a percentage to be invoiced, 
+Module that adds a button on the Customer Invoice,
+which allows you to select a percentage to be invoiced,
 the decimal precision and the rounding method.
 
 

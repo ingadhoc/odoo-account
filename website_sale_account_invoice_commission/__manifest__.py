@@ -18,26 +18,24 @@
 #
 ##############################################################################
 {
-    'name': 'Commission Invoices with Public Categories',
-    'version': "18.0.1.0.0",
-    'category': 'Accounting',
-    'sequence': 14,
-    'summary': '',
-    'author': 'ADHOC SA',
-    'website': 'www.adhoc.com.ar',
-    'license': 'AGPL-3',
-    'images': [
+    "name": "Commission Invoices with Public Categories",
+    "version": "18.0.1.0.0",
+    "category": "Accounting",
+    "sequence": 14,
+    "summary": "",
+    "author": "ADHOC SA",
+    "website": "www.adhoc.com.ar",
+    "license": "AGPL-3",
+    "images": [],
+    "depends": [
+        "account_invoice_commission",
+        "website_sale",
     ],
-    'depends': [
-        'account_invoice_commission',
-        'website_sale',
+    "data": [
+        "views/account_commission_rule_views.xml",
     ],
-    'data': [
-        'views/account_commission_rule_views.xml',
-    ],
-    'demo': [
-    ],
-    'installable': True,
-    'auto_install': True,
-    'application': False,
+    "demo": [],
+    "installable": True,
+    "auto_install": True,
+    "application": False,
 }
