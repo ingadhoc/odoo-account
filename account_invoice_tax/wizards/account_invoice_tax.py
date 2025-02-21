@@ -10,6 +10,11 @@ class AccountInvoiceTax(models.TransientModel):
     company_id = fields.Many2one(related="move_id.company_id")
     tax_line_ids = fields.One2many("account.invoice.tax_line", "invoice_tax_id")
 
+    is_currency_column_invisible = fields.Boolean(
+        compute="_compute_is_currency_column_visible",
+        store=False,
+    )
+
     @api.model
     def default_get(self, fields):
         res = super().default_get(fields)
@@ -86,6 +91,10 @@ class AccountInvoiceTax(models.TransientModel):
             "context": self._context,
         }
 
+    @api.depends("move_id")
+    def _compute_is_currency_column_visible(self):
+        self.is_currency_column_invisible = self.move_id.currency_id == self.move_id.company_id.currency_id
+
 
 class AccountInvoiceTaxLine(models.TransientModel):
     _name = "account.invoice.tax_line"
@@ -99,6 +108,7 @@ class AccountInvoiceTaxLine(models.TransientModel):
         readonly=False,
         store=True,
     )
+
     new_tax = fields.Boolean(default=True)
 
     def _get_amount_updated_values(self):
