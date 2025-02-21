@@ -10,6 +10,11 @@ class AccountInvoiceTax(models.TransientModel):
     company_id = fields.Many2one(related="move_id.company_id")
     tax_line_ids = fields.One2many("account.invoice.tax_line", "invoice_tax_id")
 
+    is_currency_column_invisible = fields.Boolean(
+        compute="_compute_is_currency_column_visible",
+        store=False,
+    )
+
     @api.model
     def default_get(self, fields):
         res = super().default_get(fields)
@@ -86,6 +91,10 @@ class AccountInvoiceTax(models.TransientModel):
             "context": self._context,
         }
 
+    @api.depends("move_id")
+    def _compute_is_currency_column_visible(self):
+        self.is_currency_column_invisible = self.move_id.currency_id == self.move_id.company_id.currency_id
+
 
 class AccountInvoiceTaxLine(models.TransientModel):
     _name = "account.invoice.tax_line"
@@ -94,25 +103,48 @@ class AccountInvoiceTaxLine(models.TransientModel):
     invoice_tax_id = fields.Many2one("account.invoice.tax")
     tax_id = fields.Many2one("account.tax", required=True)
     amount = fields.Float()
+    amount_company_currency = fields.Float(
+        compute="_compute_amount_company_currency",
+        readonly=False,
+        store=True,
+    )
+
     new_tax = fields.Boolean(default=True)
 
     def _get_amount_updated_values(self):
-        debit = credit = 0
+        debit = credit = debit_cc = credit_cc = 0
         if self.invoice_tax_id.move_id.move_type == "in_invoice":
             if self.amount > 0:
                 debit = self.amount
+                debit_cc = self.amount_company_currency
             elif self.amount < 0:
                 credit = -self.amount
+                credit_cc = -self.amount_company_currency
         else:  # For refund
             if self.amount > 0:
                 credit = self.amount
+                credit_cc = self.amount_company_currency
             elif self.amount < 0:
                 debit = -self.amount
+                debit_cc = -self.amount_company_currency
 
         # If multi currency enable
         move_currency = self.invoice_tax_id.move_id.currency_id
         company_currency = self.invoice_tax_id.move_id.company_currency_id
         if move_currency and move_currency != company_currency:
-            return {"amount_currency": self.amount if debit else -self.amount}
+            return {
+                "amount_currency": self.amount if debit else -self.amount,
+                "debit": debit_cc,
+                "credit": credit_cc,
+                "balance": self.amount_company_currency if debit else -self.amount_company_currency,
+            }
 
         return {"debit": debit, "credit": credit, "balance": self.amount if debit else -self.amount}
+
+    def _compute_amount_company_currency(self):
+        for line in self:
+            taxes = line.invoice_tax_id.move_id.tax_totals["subtotals"][0]["tax_groups"]
+            for tax_group in taxes:
+                if line.tax_id.id == tax_group["involved_tax_ids"][0]:
+                    line.amount_company_currency = tax_group["tax_amount"]
+                    break
